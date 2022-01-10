@@ -1,7 +1,7 @@
 CPP = clang++
 CPPFLAGS = -Wall -Wextra -Werror
 
-NAME = Braiinz
+NAME = Violence
 SRC = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 all: $(NAME)
 
