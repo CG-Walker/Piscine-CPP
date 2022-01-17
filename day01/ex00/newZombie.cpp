@@ -2,7 +2,7 @@
 
 Zombie* newZombie(std::string name)
 {
-    if (name.length() <= 0)
+    if (name.empty())
     {
         std::cout << "Name is invalid." << std::endl;
         return NULL;

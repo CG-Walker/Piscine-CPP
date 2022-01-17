@@ -2,27 +2,27 @@
 
 Contact Contact::newContact(void)
 {
-    Contact NewContact;
+	Contact NewContact;
 
 	std::cout << "First name : ";
-	std::cin >> first_name;
+	std::getline(std::cin, _first_name);
 
 	std::cout << "Last name : ";
-	std::cin >> last_name;
+	std::getline(std::cin, _last_name);
 
 	std::cout << "Nickname : ";
-	std::cin >> nickname;
+	std::getline(std::cin, _nickname);
 
 	std::cout << "Phone Number : ";
-	std::cin >> phone_number;
+	std::getline(std::cin, _phone_number);
 
 	std::cout << "Darkest Secret : ";
-	std::cin >> darkest_secret;
+	std::getline(std::cin, _darkest_secret);
 
-    return NewContact;
+	return NewContact;
 }
 
-std::string Contact::truncInfo(std::string value)
+std::string Contact::_truncInfo(std::string value)
 {
 	if (value.length() > 10)
 		return value.substr(0, 9) + ".";
@@ -31,16 +31,16 @@ std::string Contact::truncInfo(std::string value)
 
 void Contact::getInfos(void)
 {
-	std::cout	<<	std::setw(10) << truncInfo(first_name) << "|"
-				<<	std::setw(10) << truncInfo(last_name) << "|"
-				<<	std::setw(10) << truncInfo(nickname) << std::endl;
+	std::cout	<<	std::setw(10) << _truncInfo(_first_name) << "|"
+				<<	std::setw(10) << _truncInfo(_last_name) << "|"
+				<<	std::setw(10) << _truncInfo(_nickname) << std::endl;
 }
 
-void Contact::getCompleteInfos(void)
+void Contact::getCompleteInfos(void) const
 {
-	std::cout	<< "First Name : " << first_name << std::endl
-				<< "Last Name : " << last_name << std::endl
-				<< "Nickname : " << nickname << std::endl
-				<< "Phone Number : " << phone_number << std::endl
-				<< "Darkest Secret : " << darkest_secret << std::endl;
+	std::cout	<< "First Name : " << _first_name << std::endl
+				<< "Last Name : " << _last_name << std::endl
+				<< "Nickname : " << _nickname << std::endl
+				<< "Phone Number : " << _phone_number << std::endl
+				<< "Darkest Secret : " << _darkest_secret << std::endl;
 }

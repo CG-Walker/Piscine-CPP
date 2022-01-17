@@ -10,15 +10,15 @@ class Contact
 	public:
 		Contact 	newContact(void);
 		void		getInfos(void);
-		void		getCompleteInfos(void);
+		void		getCompleteInfos(void) const;
 	private:
-		std::string truncInfo(std::string value);
+		std::string _truncInfo(std::string value);
 
-		std::string first_name;
-		std::string last_name;
-		std::string nickname;
-		std::string phone_number;
-		std::string darkest_secret;
+		std::string _first_name;
+		std::string _last_name;
+		std::string _nickname;
+		std::string _phone_number;
+		std::string _darkest_secret;
 };
 
 #endif

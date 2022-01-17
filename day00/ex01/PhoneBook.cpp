@@ -4,19 +4,18 @@
 #include "phonebook.hpp"
 #include "contact.hpp"
 
-PhoneBook::PhoneBook()
+PhoneBook::PhoneBook() : _size(0)
 {
-	size = 0;
 }
 
 void PhoneBook::addContact(void)
 {
 	Contact NewContact;
 	NewContact.newContact();
-	phone_book[size] = NewContact;
-	size += 1;
-	if (size > 7)
-		size = 7;
+	_phone_book[_size] = NewContact;
+	_size += 1;
+	if (_size > 7)
+		_size = 7;
 }
 
 void PhoneBook::search(void)
@@ -30,14 +29,12 @@ void PhoneBook::search(void)
 	for (size_t i = 0; i < 8; i++)
 	{
 		std::cout << std::setw(10) << i << "|";
-		phone_book[i].getInfos();
+		_phone_book[i].getInfos();
 	}
 	std::cout << "Enter an index number to see it's infos : ";
 	std::cin >> chosen_index;
 	if (chosen_index < 0 || chosen_index > 7)
 		std::cout << "Index doesn't exist." << std::endl;
 	else
-	{
-		phone_book[chosen_index].getCompleteInfos();
-	}
+		_phone_book[chosen_index].getCompleteInfos();
 }

@@ -13,8 +13,8 @@ class PhoneBook
 		void	search(void);
 
 	private:
-		Contact	phone_book[8];
-		size_t	size;
+		Contact	_phone_book[8];
+		size_t	_size;
 };
 
 #endif

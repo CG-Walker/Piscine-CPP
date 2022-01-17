@@ -5,28 +5,39 @@ int main(int argc, char const *argv[])
 {
 	if (argc != 4 || !argv[2][0] || !argv[3][0])
 	{
-		//error
+		std::cout << "Wrong number of arguments" << std::endl;
+		return (-1);
 	}
-	std::ofstream file_in;
-	file_in.open(argv[1], std::fstream::in);
-	if (file_in.is_open())
+	std::ifstream file_in;
+	file_in.open(argv[1], std::ifstream::in);
+	if (file_in.is_open() == false)
 	{
 		std::cout << "Cannot open in file" << std::endl;
 		return (-1);
 	}
 	std::string filename = (std::string)argv[1] + ".replace";
-	std::ofstream file_out (filename.c_str());
-	if (file_out.is_open())
+	std::ofstream file_out(filename.c_str());
+	if (file_out.is_open() == false)
 	{
 		std::cout << "Cannot open out file" << std::endl;
 		return (-1);
 	}
-	std::string s1 = argv[2];
-	std::string s2 = argv[3];
+	std::string s1 = (std::string)argv[2];
+	std::string s2 = (std::string)argv[3];
 	std::string buff;
-	while ()
-	{
+	size_t pos;
 
+	while (getline(file_in, buff))
+	{
+		if ((pos = buff.find(s1)) != 0)
+		{
+			buff.erase(pos, s1.length());
+			buff.insert(pos, s2);
+			std::cout << "new : " << buff << std::endl;
+			file_out << buff;
+		}
 	}
-	return 0;
+	file_in.close();
+	file_out.close();
+	return (0);
 }
