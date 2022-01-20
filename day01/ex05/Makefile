@@ -1,8 +1,8 @@
 CPP = clang++
-CPPFLAGS = -Wall -Wextra -Werror
-
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = Karen
 SRC = main.cpp Karen.cpp
+
 all: $(NAME)
 
 $(NAME): $(SRC)

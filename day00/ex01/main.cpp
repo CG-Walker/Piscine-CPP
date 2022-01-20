@@ -1,6 +1,3 @@
-#include <iostream>
-#include <string>
-
 #include "phonebook.hpp"
 
 int main()
@@ -11,7 +8,8 @@ int main()
 	while (true)
 	{
 		std::cout << "Enter command : ";
-		std::getline(std::cin, command);
+		if (!std::getline(std::cin, command))
+			return 1;
 		if (command == "EXIT")
 			return 0;
 		else if (command == "ADD")

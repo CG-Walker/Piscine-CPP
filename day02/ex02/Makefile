@@ -1,9 +1,8 @@
 CPP = clang++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = Braiinz
-SRC = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
-
+NAME = Fixed
+SRC = main.cpp Fixed.cpp
 all: $(NAME)
 
 $(NAME): $(SRC)

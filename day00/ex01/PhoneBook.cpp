@@ -1,6 +1,3 @@
-#include <string>
-#include <iostream>
-
 #include "phonebook.hpp"
 #include "contact.hpp"
 
@@ -20,7 +17,8 @@ void PhoneBook::addContact(void)
 
 void PhoneBook::search(void)
 {
-	size_t chosen_index;
+	std::string	string_index;
+	size_t		chosen_index;
 
 	std::cout	<< std::setw(10) << "Index" << "|"
 				<< std::setw(10) << "First Name" << "|"
@@ -32,7 +30,8 @@ void PhoneBook::search(void)
 		_phone_book[i].getInfos();
 	}
 	std::cout << "Enter an index number to see it's infos : ";
-	std::cin >> chosen_index;
+	std::getline(std::cin, string_index);
+	std::istringstream(string_index) >> chosen_index;
 	if (chosen_index < 0 || chosen_index > 7)
 		std::cout << "Index doesn't exist." << std::endl;
 	else
