@@ -9,9 +9,12 @@ private:
 
 public:
 	FragTrap(std::string name);
+	FragTrap(FragTrap & src);
 	~FragTrap(void);
 
 	void highFivesGuys(void);
+
+	FragTrap & operator=(FragTrap & rhs);
 };
 
 #endif

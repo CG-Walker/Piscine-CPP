@@ -31,6 +31,14 @@ void PhoneBook::search(void)
 	}
 	std::cout << "Enter an index number to see it's infos : ";
 	std::getline(std::cin, string_index);
+	for (size_t i = 0; i < string_index.size(); i++)
+	{
+		if (!isdigit(string_index[i]))
+		{
+			std::cout << string_index << " is not a number." << std::endl;
+			return ;
+		}
+	}
 	std::istringstream(string_index) >> chosen_index;
 	if (chosen_index < 0 || chosen_index > 7)
 		std::cout << "Index doesn't exist." << std::endl;

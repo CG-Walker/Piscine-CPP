@@ -9,9 +9,12 @@ private:
 
 public:
 	ScavTrap(std::string name);
+	ScavTrap(ScavTrap & src);
 	~ScavTrap(void);
 
 	void guardGate(void);
+
+	ScavTrap & operator=(ScavTrap & rhs);
 };
 
 #endif

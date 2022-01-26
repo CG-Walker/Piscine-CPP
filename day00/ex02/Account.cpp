@@ -8,6 +8,18 @@ int Account::_totalAmount = 0;
 int Account::_totalNbDeposits = 0;
 int Account::_totalNbWithdrawals = 0;
 
+Account::Account()
+{
+    _nbAccounts = 0;
+    _totalAmount = 0;
+    _totalNbDeposits = 0;
+    _totalNbWithdrawals = 0;
+    _accountIndex = 0;
+    _amount = 0;
+    _nbDeposits = 0;
+    _nbWithdrawals = 0;
+}
+
 Account::Account(int initial_deposit) : _amount(initial_deposit)
 {
     _accountIndex = 0;
@@ -26,7 +38,6 @@ void Account::_displayTimestamp(void)
 
 	std::cout << "[";
     std::cout << 1900 + ltm->tm_year;
-    // month starts at 0;
     std::cout << std::setfill('0') << std::setw(2) << 1 + ltm->tm_mon;
     std::cout << std::setfill('0') << std::setw(2) << ltm->tm_mday;
     std::cout << "_";
@@ -114,16 +125,4 @@ void Account::displayStatus(void) const
 	std::cout << "amount:" << _amount << ";";
 	std::cout << "deposits:" << _nbDeposits << ";";
 	std::cout << "withdrawals:" << _nbWithdrawals << std::endl;
-}
-
-Account::Account()
-{
-    _nbAccounts = 0;
-    _totalAmount = 0;
-    _totalNbDeposits = 0;
-    _totalNbWithdrawals = 0;
-    _accountIndex = 0;
-    _amount = 0;
-    _nbDeposits = 0;
-    _nbWithdrawals = 0;
 }

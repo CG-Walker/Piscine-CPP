@@ -8,6 +8,23 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 	_attackDamage = 20;
 }
 
+ScavTrap::ScavTrap(ScavTrap & src) : ClapTrap(src.getName())
+{
+	std::cout << "ScavTrap copy constructor called." << std::endl;
+	_hitPoints = src.getHitPoints();
+	_energyPoints = src.getEnergyPoints();
+	_attackDamage = src.getAttackDamage();
+}
+
+ScavTrap & ScavTrap::operator=(ScavTrap & rhs)
+{
+	_name = rhs.getName();
+	_hitPoints = rhs.getHitPoints();
+	_energyPoints = rhs.getEnergyPoints();
+	_attackDamage = rhs.getAttackDamage();
+	return *this;
+}
+
 ScavTrap::~ScavTrap(void)
 {
 	std::cout << "ScavTrap Destructor called." << std::endl;
