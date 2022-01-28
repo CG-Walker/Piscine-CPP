@@ -7,7 +7,7 @@
 # include <sstream>
 # include <cctype>
 
-#include "contact.hpp"
+#include "Contact.hpp"
 
 class PhoneBook
 {

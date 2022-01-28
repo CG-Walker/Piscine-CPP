@@ -1,5 +1,5 @@
-#include "phonebook.hpp"
-#include "contact.hpp"
+#include "PhoneBook.hpp"
+#include "Contact.hpp"
 
 PhoneBook::PhoneBook() : _size(0)
 {
