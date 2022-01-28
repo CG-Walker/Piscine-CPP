@@ -1,14 +1,14 @@
 CPP = clang++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = exec
+NAME = ex02
 SRC = tests.cpp Account.cpp
 
 
 all: $(NAME)
 
 $(NAME): $(SRC)
-	$(CPP) $(CPPFLAGS) -o $@ $^
+	$(CPP) $(CPPFLAGS) $^ -o $@
 
 clean:
 	rm -f $(NAME)
