@@ -25,17 +25,18 @@ int main(int argc, char const *argv[])
 	std::string s1 = (std::string)argv[2];
 	std::string s2 = (std::string)argv[3];
 	std::string buff;
-	size_t pos;
+	int			pos;
 
+	pos = 0;
 	while (getline(file_in, buff))
 	{
-		if ((pos = buff.find(s1)) != 0)
+		if ((pos = buff.find(s1)) != -1)
 		{
+			std::cout << "pos = " << pos << std::endl;
 			buff.erase(pos, s1.length());
 			buff.insert(pos, s2);
-			std::cout << "new : " << buff << std::endl;
-			file_out << buff;
 		}
+		file_out << buff << "\n";
 	}
 	file_in.close();
 	file_out.close();

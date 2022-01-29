@@ -1,13 +1,13 @@
 CPP = clang++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = Braiinz
+NAME = Horde
 SRC = main.cpp Zombie.cpp ZombieHorde.cpp
 
 all: $(NAME)
 
 $(NAME): $(SRC)
-	$(CPP) $(CPPFLAGS) -o $@ $^
+	$(CPP) $(CPPFLAGS) $^ -o $@
 
 clean:
 	rm -f $(NAME)

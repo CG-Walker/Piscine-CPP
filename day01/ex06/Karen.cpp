@@ -10,31 +10,40 @@ Karen::~Karen()
 
 void Karen::complain(std::string level)
 {
-	std::string type[4] = {"debug", "info", "warning", "error"};
+	std::string type[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	void		(Karen::*ptr[4])(void) = {&Karen::_debug, &Karen::_info, &Karen::_warning, &Karen::_error};
-	int			j = -1;
-	for (int i = 0 ; i < 4 ; i++)
+	int			i = -1;
+
+	while (i < 4)
 	{
 		if (type[i] == level)
-			j = i;
+			break ;
+		i++;
 	}
-	switch (j)
+
+	if (i == 4)
+		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+
+	while (i < 4)
 	{
-		case (0):
-			(this->*(ptr[j]))();
-			break;
-		case (1):
-			(this->*(ptr[j]))();
-			break;
-		case (2):
-			(this->*(ptr[j]))();
-			break;
-		case (3):
-			(this->*(ptr[j]))();
-			break;
-		default:
-			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-			break;
+		switch (i)
+		{
+			case (0):
+				(this->*(ptr[i]))();
+				break;
+			case (1):
+				(this->*(ptr[i]))();
+				break;
+			case (2):
+				(this->*(ptr[i]))();
+				break;
+			case (3):
+				(this->*(ptr[i]))();
+				break;
+		}
+		if (i < 3)
+			std::cout << std::endl;
+		i++;
 	}
 }
 

@@ -6,7 +6,7 @@ SRC = main.cpp
 all: $(NAME)
 
 $(NAME): $(SRC)
-	$(CPP) $(CPPFLAGS) -o $@ $^
+	$(CPP) $(CPPFLAGS) $^ -o $@
 
 clean:
 	rm -f $(NAME)

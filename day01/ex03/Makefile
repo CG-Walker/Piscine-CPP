@@ -6,7 +6,7 @@ SRC = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 all: $(NAME)
 
 $(NAME): $(SRC)
-	$(CPP) $(CPPFLAGS) -o $@ $^
+	$(CPP) $(CPPFLAGS) $^ -o $@
 
 clean:
 	rm -f $(NAME)
