@@ -30,7 +30,17 @@ FragTrap::~FragTrap(void)
 	std::cout << "FragTrap Destructor called." << std::endl;
 }
 
+void FragTrap::setHitPoints(void)
+{
+	_hitPoints = 100;
+}
+
+void FragTrap::setAttackDamage(void)
+{
+	_attackDamage = 30;
+}
+
 void FragTrap::highFivesGuys(void)
 {
-	std::cout << "Hey guys ! High Fives !" << std::endl;
+	std::cout << _name <<  " : Hey guys ! High Fives !" << std::endl;
 }

@@ -18,6 +18,8 @@ int main(void)
 	c.attack(a.getName());
 	c.highFivesGuys();
 	d.attack(c.getName());
+	d.highFivesGuys();
+	d.whoAmiI();
 
 	return 0;
 }

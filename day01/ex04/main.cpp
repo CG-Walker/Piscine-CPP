@@ -32,7 +32,6 @@ int main(int argc, char const *argv[])
 	{
 		if ((pos = buff.find(s1)) != -1)
 		{
-			std::cout << "pos = " << pos << std::endl;
 			buff.erase(pos, s1.length());
 			buff.insert(pos, s2);
 		}

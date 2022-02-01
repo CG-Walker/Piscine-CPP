@@ -3,14 +3,14 @@
 
 # include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
-private:
-
+protected:
+	void setEnergyPoints(void);
 public:
 	ScavTrap(std::string name);
 	ScavTrap(ScavTrap & src);
-	~ScavTrap(void);
+	virtual ~ScavTrap(void);
 
 	void guardGate(void);
 

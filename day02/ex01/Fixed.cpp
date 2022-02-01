@@ -1,5 +1,4 @@
 #include "Fixed.hpp"
-#include <cmath>
 
 // ------------------- ex00 -------------------
 
@@ -40,13 +39,13 @@ void Fixed::setRawBits(int const raw)
 
 Fixed::Fixed(const int value)
 {
-	std::cout << "Int consructor called" << std::endl;
+	std::cout << "Int constructor called" << std::endl;
 	setRawBits(value << _fract);
 }
 
 Fixed::Fixed(const float value)
 {
-	std::cout << "Float consructor called" << std::endl;
+	std::cout << "Float constructor called" << std::endl;
 	this->setRawBits((int)roundf(value * (1 << this->_fract)));
 }
 

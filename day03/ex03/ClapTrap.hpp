@@ -15,7 +15,7 @@ protected:
 public:
 	ClapTrap(std::string const name);
 	ClapTrap(ClapTrap & src);
-	~ClapTrap();
+	virtual ~ClapTrap();
 
 	std::string	getName(void);
 	int			getHitPoints(void);

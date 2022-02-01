@@ -1,27 +1,26 @@
 #include "Fixed.hpp"
-#include <cmath>
 
 // ------------------- ex00 -------------------
 
 Fixed::Fixed() : _value(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	//std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(Fixed const & src)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	//std::cout << "Copy constructor called" << std::endl;
 	*this = src;
 }
 
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called" << std::endl;
+	//std::cout << "Destructor called" << std::endl;
 }
 
 Fixed & Fixed::operator=(Fixed const & rhs)
 {
-	std::cout << "Assignation operator called" << std::endl;
+	//std::cout << "Assignation operator called" << std::endl;
 	setRawBits(rhs.getRawBits());
 	return (*this);
 }
@@ -40,13 +39,13 @@ void Fixed::setRawBits(int const raw)
 
 Fixed::Fixed(const int value)
 {
-	std::cout << "Int consructor called" << std::endl;
+	//std::cout << "Int consructor called" << std::endl;
 	setRawBits(value << _fract);
 }
 
 Fixed::Fixed(const float value)
 {
-	std::cout << "Float consructor called" << std::endl;
+	//std::cout << "Float consructor called" << std::endl;
 	this->setRawBits((int)roundf(value * (1 << this->_fract)));
 }
 

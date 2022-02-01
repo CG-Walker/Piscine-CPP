@@ -7,8 +7,10 @@ int main(void)
 
 	a.attack("Bob");
 	b.takeDamage(b.getAttackDamage());
+	b.takeDamage(50);
 	b.attack("Arthur");
-	b.beRepaired(10);
+	b.beRepaired(5);
+	a.beRepaired(5);
 
 	return 0;
 }

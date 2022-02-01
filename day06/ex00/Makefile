@@ -1,8 +1,8 @@
 CPP = clang++
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror
 
-NAME = ClapTrap
-SRC = main.cpp ClapTrap.cpp
+NAME = Numbers
+SRC = main.cpp Numbers.cpp
 all: $(NAME)
 
 $(NAME): $(SRC)

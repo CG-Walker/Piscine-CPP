@@ -9,7 +9,8 @@ int main(void)
 	a.attack("Bob");
 	b.takeDamage(a.getAttackDamage());
 	b.attack("Arthur");
-	b.beRepaired(10);
+	a.takeDamage(b.getAttackDamage());
+	a.beRepaired(10);
 	b.guardGate();
 
 	return 0;

@@ -29,6 +29,11 @@ ScavTrap::~ScavTrap(void)
 {
 	std::cout << "ScavTrap Destructor called." << std::endl;
 }
+	
+void ScavTrap::setEnergyPoints(void)
+{
+	_energyPoints = 50;
+}
 
 void ScavTrap::guardGate(void)
 {
