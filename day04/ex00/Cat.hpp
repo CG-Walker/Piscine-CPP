@@ -1,36 +1,26 @@
-#ifndef Cat_HPP
-# define Cat_HPP
-
-# include "Animal.hpp"
+#ifndef CAT_HPP
+# define CAT_HPP
 
 # include <iostream>
 # include <string>
+# include "Animal.hpp"
 
 class Cat : public Animal
 {
-private:
-	/* data */
 public:
-	Cat(/* args */);
+	// Constructors & Destructor
+	Cat();
+	Cat(Cat & src);
 	~Cat();
 
+	// Operator Overload
+	Cat & operator=(Cat & rhs);
+
+	// Getters & Setters
+
+	// Class Functions
 	void makeSound() const;
+private:
 };
 
-Cat::Cat()
-{
-	_type = "Cat";
-	std::cout << "Cat default constructor called." << std::endl;
-}
-
-Cat::~Cat()
-{
-	std::cout << "Cat destructor called." << std::endl;
-}
-
-void Cat::makeSound() const
-{
-	std::cout << "Meow." << std::endl;
-}
-
-#endif
+ #endif

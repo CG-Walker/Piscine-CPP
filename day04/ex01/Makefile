@@ -2,7 +2,7 @@ CPP = clang++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 NAME = Animals
-SRC = main.cpp
+SRC = main.cpp Animal.cpp Brain.cpp Cat.cpp Dog.cpp
 all: $(NAME)
 
 $(NAME): $(SRC)

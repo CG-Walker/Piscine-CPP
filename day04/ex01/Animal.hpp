@@ -6,34 +6,22 @@
 
 class Animal
 {
-protected:
-	std::string _type;
 public:
-	Animal(/* args */);
+	// Constructors & Destructor
+	Animal();
+	Animal(Animal & src);
 	virtual ~Animal();
 
-	virtual void makeSound() const;
+	// Operator Overload
+	Animal & operator=(Animal & rhs);
+
+	// Getters & Setters
 	std::string	getType(void) const;
+
+	// Class Functions
+	virtual void makeSound() const;
+protected:
+	std::string _type;
 };
-
-Animal::Animal(/* args */)
-{
-	std::cout << "Animal default constructor called." << std::endl;
-}
-
-Animal::~Animal()
-{
-	std::cout << "Animal destructor called." << std::endl;
-}
-
-void Animal::makeSound() const
-{
-	std::cout << "This animal makes no particular sounds..." << std::endl;
-}
-
-std::string Animal::getType(void) const
-{
-	return _type;
-}
 
 #endif

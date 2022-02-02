@@ -1,5 +1,5 @@
-#ifndef WrongCat_HPP
-# define WrongCat_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
 # include "WrongAnimal.hpp"
 
@@ -9,26 +9,19 @@
 class WrongCat : public WrongAnimal
 {
 public:
-	WrongCat(/* args */);
+	// Constructors & Destructor
+	WrongCat();
+	WrongCat(WrongCat & src);
 	~WrongCat();
 
+	// Operator Overload
+	WrongCat & operator=(WrongCat & rhs);
+
+	// Getters & Setters
+
+	// Class Functions
 	void makeSound() const;
+private:
 };
 
-WrongCat::WrongCat()
-{
-	this->_type = "WrongCat";
-	std::cout << "WrongCat default constructor called." << std::endl;
-}
-
-WrongCat::~WrongCat()
-{
-	std::cout << "WrongCat destructor called." << std::endl;
-}
-
-void WrongCat::makeSound() const
-{
-	std::cout << "Mreown." << std::endl;
-}
-
-#endif
+ #endif

@@ -69,6 +69,45 @@ void identify(Base & p)
 
 int main(int argc, char const *argv[])
 {
-	/* code */
-	return 0;
+	std::srand(std::time(0));
+
+	// 3 random Base children
+	std::cout << "4 RANDOM BASE CHILDREN:" << std::endl;
+	std::cout << "----------------------------" << std::endl;
+	Base *rand1 = generate();
+	Base *rand2 = generate();
+	Base *rand3 = generate();
+	Base *rand4 = generate();
+	std::cout << std::endl << std::endl;
+
+	// Create references
+	Base &rand1_ref = *rand1;
+	Base &rand2_ref = *rand2;
+	Base &rand3_ref = *rand3;
+	Base &rand4_ref = *rand4;
+
+	std::cout << "IDENTIFY VIA ADDRESS:" << std::endl;
+	std::cout << "----------------------------" << std::endl;
+	identify(rand1);
+	identify(rand2);
+	identify(rand3);
+	identify(rand4);
+	std::cout << std::endl << std::endl;
+
+	std::cout << "IDENTIFY VIA REFERENCE:" << std::endl;
+	std::cout << "----------------------------" << std::endl;
+	identify(rand1_ref);
+	identify(rand2_ref);
+	identify(rand3_ref);
+	identify(rand4_ref);
+	std::cout << std::endl << std::endl;
+
+	std::cout << "DESTRUCTORS:" << std::endl;
+	std::cout << "----------------------------" << std::endl;
+	delete rand1;
+	delete rand2;
+	delete rand3;
+	delete rand4;
+	std::cout << std::endl << std::endl;
+	return (0);
 }

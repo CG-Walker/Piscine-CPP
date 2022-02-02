@@ -6,28 +6,21 @@
 
 class Brain
 {
-private:
-	std::string *_ideas;
 public:
-	Brain(/* args */);
+	// Constructors & Destructor
+	Brain();
+	Brain(Brain & src);
 	~Brain();
+
+	// Operator Overload
+	Brain & operator=(Brain & rhs);
+
+	// Getters & Setters
+	std::string * getIdeas();
+
+	// Class Functions
+private:
+	std::string * _ideas;
 };
-
-Brain::Brain(/* args */)
-{
-	_ideas = new std::string[100];
-	for (size_t i = 0; i < 100; i++)
-	{
-		_ideas[i] = "I've got an idea !\n";
-	}
-	std::cout << "Brain has been created." << std::endl;
-}
-
-Brain::~Brain()
-{
-	delete [] _ideas;
-	std::cout << "Brain has been deleted." << std::endl;
-}
-
 
 #endif

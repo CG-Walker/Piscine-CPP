@@ -1,34 +1,27 @@
-#ifndef WrongAnimal_HPP
-# define WrongAnimal_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
 # include <iostream>
 # include <string>
 
 class WrongAnimal
 {
-protected:
-	std::string _type;
 public:
-	WrongAnimal(/* args */);
+	// Constructors & Destructor
+	WrongAnimal();
+	WrongAnimal(WrongAnimal & src);
 	~WrongAnimal();
 
-	virtual void makeSound() const;
+	// Operator Overload
+	WrongAnimal & operator=(WrongAnimal & rhs);
+
+	// Getters & Setters
+	std::string	getType(void) const;
+
+	// Class Functions
+	void makeSound() const;
+protected:
+	std::string _type;
 };
 
-WrongAnimal::WrongAnimal()
-{
-	this->_type = "WrongAnimal";
-	std::cout << "WrongAnimal default constructor called." << std::endl;
-}
-
-WrongAnimal::~WrongAnimal()
-{
-	std::cout << "WrongAnimal destructor called." << std::endl;
-}
-
-void WrongAnimal::makeSound() const
-{
-	std::cout << "This class makes no sounds. At all." << std::endl;
-}
-
-#endif
+ #endif

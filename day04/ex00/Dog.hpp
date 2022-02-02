@@ -1,36 +1,26 @@
 #ifndef DOG_HPP
 # define DOG_HPP
 
-# include "Animal.hpp"
-
 # include <iostream>
 # include <string>
+# include "Animal.hpp"
 
 class Dog : public Animal
 {
-private:
-	/* data */
 public:
-	Dog(/* args */);
+	// Constructors & Destructor
+	Dog();
+	Dog(Dog & src);
 	~Dog();
 
+	// Operator Overload
+	Dog & operator=(Dog & rhs);
+
+	// Getters & Setters
+
+	// Class Functions
 	void makeSound() const;
+private:
 };
 
-Dog::Dog()
-{
-	this->_type = "Dog";
-	std::cout << "Dog default constructor called." << std::endl;
-}
-
-Dog::~Dog()
-{
-	std::cout << "Dog destructor called." << std::endl;
-}
-
-void Dog::makeSound() const
-{
-	std::cout << "Woof." << std::endl;
-}
-
-#endif
+ #endif
